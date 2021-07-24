@@ -21,6 +21,7 @@ class Note:
         self._isSharp = False
         self._isFlat = False
         self._name = ''
+        self._numeral = ''
         self._pitch = MusicMath.processPitch(self._pitch)
         self._setName()
 
@@ -69,6 +70,12 @@ class Note:
 
 
 
+    @property
+    def numeral(self):
+        return self._numeral
+
+
+
     @octave_range.setter
     def octave_range(self, octave_range):
         self._octave_range = octave_range
@@ -114,3 +121,9 @@ class Note:
             self._setName()
         else:
             self.isSharp = True
+
+
+
+    @numeral.setter
+    def numeral(self, roman_numeral):
+        self._numeral = roman_numeral

@@ -19,9 +19,9 @@ from controller import MusicMath
 
 
 class CircleOfFifth:
-    def __init__(self, scale, scale_mode):
+    def __init__(self, scale, quality):
         self._scale = scale
-        self._scale_mode = scale_mode
+        self._quality = quality
         self._proc_scale()
 
 
@@ -37,9 +37,9 @@ class CircleOfFifth:
 
     def _get_circle(self):
         circle = {}
-        if self._scale_mode == wStrings.MAJOR:
+        if self._quality == wStrings.MAJOR:
             circle = wStrings.MajorCircleOfFifthPitch
-        elif self._scale_mode == wStrings.MINOR:
+        elif self._quality == wStrings.MINOR:
             circle = wStrings.MinorCircleOfFifthPitch
         return circle
 
@@ -65,7 +65,7 @@ class CircleOfFifth:
     def _find_key_position_in_cirlce(self, key, circle):
         '''Return the position in the circle of fifth
         Params key (root note) 
-        Params scale_mode (major or minor scale etc..)'''
+        Params quality (major or minor scale etc..)'''
         index = self._get_circle_index(key.pitch, circle)
         return index
 
