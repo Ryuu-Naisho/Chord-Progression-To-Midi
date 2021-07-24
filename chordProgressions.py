@@ -34,3 +34,6 @@ if __name__ == '__main__':
     scale_of_em = scale.scale
     for note in scale_of_em:
         Debug.write(note.name)
+    
+
+    Debug.write(wStrings.Progressions.Blues)

@@ -32,8 +32,8 @@ class Scale:
         increment_ammount = 2
         intervals = []
         self._i = key
-        self._i.numeral = wStrings.i
-        
+        self._i.numeral = wStrings.Numeral.i
+
         for index in range(7):
             #Since python midi uses whole numbers instead of semitone, need to increment by 1 at E or B
             #Else the reset increment by 2
@@ -46,17 +46,17 @@ class Scale:
 
 
         self._ii = Notes.Note(intervals[0])
-        self._ii.numeral = wStrings.ii
+        self._ii.numeral = wStrings.Numeral.ii
         self._iii = Notes.Note(intervals[1])
-        self._iii.numeral = wStrings.iii
+        self._iii.numeral = wStrings.Numeral.iii
         self._iv = Notes.Note(intervals[2])
-        self._iv.numeral = wStrings.iv
+        self._iv.numeral = wStrings.Numeral.iv
         self._v = Notes.Note(intervals[3])
-        self._v.numeral = wStrings.v
+        self._v.numeral = wStrings.Numeral.v
         self._vi = Notes.Note(intervals[4])
-        self._vi.numeral = wStrings.vi
+        self._vi.numeral = wStrings.Numeral.vi
         self._vii = Notes.Note(intervals[5])
-        self._vii.numeral = wStrings.vii
+        self._vii.numeral = wStrings.Numeral.vii
 
 
     def _proc_scale(self, scale, quality):
