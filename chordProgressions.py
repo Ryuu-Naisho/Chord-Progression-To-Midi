@@ -6,6 +6,7 @@ from model import Keys
 from controller import Chords
 from controller import Scales
 from controller import CircleOfFifths
+from controller import Progresssions
 import Debug
 
 if __name__ == '__main__':
@@ -40,3 +41,14 @@ if __name__ == '__main__':
     chords = chord.get
     for c in chords:
         print(c.name)
+
+
+
+    Debug.write("Progression Chords:")
+    progression = Progresssions.Progression(scale_of_em, wStrings.Progressions.Three_Chord)
+    chords = progression.get
+    for chord in chords:
+        notes = chord.get
+        for note in notes:
+            print(note.name)
+        print("\n")

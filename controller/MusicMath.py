@@ -11,7 +11,7 @@ def processPitch(newPitch):
 def process_pitch_scale(new_pitch):
     index = new_pitch
     pitch = 0
-    if index >= 8:
-        index -=8
+    if index >= 7:
+        index -=7
     pitch = index
     return pitch

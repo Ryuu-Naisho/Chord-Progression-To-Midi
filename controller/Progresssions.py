@@ -4,31 +4,40 @@ Output Chords of that progression.
 '''
 
 
+import Debug
 from model import wStrings
+from controller import Chords
 import random
 
 
 class Progression:
 
 
-    def __init__(self, progression_type):
+    def __init__(self, scale, progression_type):
         '''
         Progressions will be noted in lowercase roman numerals. (Regardless of major or minor) that will depend on the scale that is inputed.
         '''
-        self._i = 0
-        self._ii = 0
-        self._iii = 0
-        self._iv = 0
-        self._v = 0
-        self._vi = 0
-        self._vii = 0
         self._progression_type = progression_type
         self._progression_structure = []
+        self._progression = self._proc_progression(scale, progression_type)
+
+
+
+    def _proc_chords(self, scale, progression_structer):
+        '''Return chords of the progression.'''
+        progression = [0] * len(progression_structer) 
+        index = 0
+        for numeral in progression_structer:
+            chords = Chords.Chord(scale,scale[0], numeral)
+            progression[index] = chords
+            index += 1
+        return progression
 
 
 
 
-    def _proc_progression(self, progression_type):
+
+    def _proc_progression(self, scale, progression_type):
         '''Get progression type and randomly select an available one from wStrings.'''
         progression = []
         progression_structure = []
@@ -39,54 +48,21 @@ class Progression:
             progression = wStrings.Blues_Progression_Array
         elif progression_type == wStrings.Progressions.Trap:
             progression = wStrings.Trap_Progression_Array
-        random_index = random.randint(0,len(progression))
+        random_index = random.randint(0,len(progression) - 1)
         progression_structure = progression[random_index]
         self._progression_structure = progression_structure
-
-
-
-    @property
-    def i(self):
-        return self._i
-
-
-
-    @property
-    def ii(self):
-        return self._ii
-
-
-
-    @property
-    def iii(self):
-        return self._iii
-
-
-
-    @property
-    def iv(self):
-        return self._iv
-
-
-
-    @property
-    def v(self):
-        return self._v
-
-
-
-    @property
-    def vi(self):
-        return self._vi
-
-
-
-    @property
-    def vii(self):
-        return self._vii
+        progression = self._proc_chords(scale, progression_structure)
+        return progression
 
 
 
     @property
     def progression_type(self):
         return self._progression_type
+
+
+
+    @property
+    def get(self):
+        '''Return all the chords in the progression.'''
+        return self._progression
