@@ -5,6 +5,21 @@ MINOR = "Minor"
 MAJOR7 = "Major7"
 MINOR7 = "Minor7"
 AllKeys = {0:'C', 1:'C#/Db', 2:'D', 3: 'D#/Eb', 4:'E', 5:'F', 6:'F#/Gb', 7:'G', 8:'G#/Ab', 9:'A', 10:'A#/Bb', 11:'B'}
+#Roman numeral strings
+i = 'i'
+ii = 'ii'
+iii = 'iii'
+iv = 'iv'
+v = 'v'
+vi = 'vi'
+vii = 'vii'
+i7 = 'i7'
+ii7 = 'ii7'
+iii7 = 'iii7'
+iv = 'iv7'
+v7 = 'v7'
+vi7 = 'vi7'
+vii7 = 'vii7'
 #CircleOfFifths
 #key is the place on the circle of fifth clockwise for major and minor
 #i.e 0 is first place on C on the circle of fifth
