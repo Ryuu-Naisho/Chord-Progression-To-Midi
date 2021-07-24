@@ -5,6 +5,7 @@ Output Chords of that progression.
 
 
 from model import wStrings
+import random
 
 
 class Progression:
@@ -22,11 +23,25 @@ class Progression:
         self._vi = 0
         self._vii = 0
         self._progression_type = progression_type
+        self._progression_structure = []
 
 
 
-    def _proc_progression(self):
+
+    def _proc_progression(self, progression_type):
         '''Get progression type and randomly select an available one from wStrings.'''
+        progression = []
+        progression_structure = []
+        random_index = 0
+        if progression_type == wStrings.Progressions.Three_Chord:
+            progression = wStrings.Three_Chord_Progression_Array
+        elif progression_type == wStrings.Progressions.Blues:
+            progression = wStrings.Blues_Progression_Array
+        elif progression_type == wStrings.Progressions.Trap:
+            progression = wStrings.Trap_Progression_Array
+        random_index = random.randint(0,len(progression))
+        progression_structure = progression[random_index]
+        self._progression_structure = progression_structure
 
 
 

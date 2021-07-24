@@ -15,10 +15,7 @@ if __name__ == '__main__':
     key = keys.C
     key.isFlat = False
     '''print(key.name)'''
-    chord = Chords.Chord(key, wStrings.MINOR7)
-    chords = chord.getAllNotes
-    '''for c in chords:
-        print(c.name)'''
+
 
 
     scale = Scales.Scale(keys.E, wStrings.MAJOR)
@@ -37,3 +34,9 @@ if __name__ == '__main__':
     
 
     Debug.write(wStrings.Progressions.Blues)
+
+
+    chord = Chords.Chord(scale_of_em, scale_of_em[0], wStrings.Numeral.v)
+    chords = chord.get
+    for c in chords:
+        print(c.name)
