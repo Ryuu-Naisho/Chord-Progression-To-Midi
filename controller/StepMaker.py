@@ -45,11 +45,12 @@ def proc_progression(progression):
     '''Generate step and durration for each note in the progression.
     return processed progression.'''
     processed_progression = []
-    for note in progression:
-        step = get_step()
-        durration = get_durration(step)
-        note.step = step
-        note.durration = durration
+    for chord in progression:
+        for note in chord:
+            step = get_step()
+            durration = get_durration(step)
+            note.step = step
+            note.durration = durration
 
 
     processed_progression = progression
