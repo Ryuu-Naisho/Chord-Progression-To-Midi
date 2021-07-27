@@ -2,7 +2,7 @@ def enum(**enums):
     return type('Enum', (), enums)
 
 
-
+    
 TITLE = "Chord Progressions"
 INTRO = "Welcome, specify a key, tempo and genre. To generate a chord progression."
 MAJOR = "Major"
@@ -36,6 +36,19 @@ vii7 = 'vii7')
 MajorCircleOfFifthPitch = {0:0, 1:7, 2:2, 3:9, 4:4, 5:11, 6:6, 7:1, 8:8, 9:3, 10:10, 11:5}
 MinorCircleOfFifthPitch = {0:9, 1:4, 2:11, 3:6, 4:1, 5:8, 6:3, 7:10, 8:5, 9:0, 10:7, 11:2}
 CircleOfFifthNumSharps = {0:0, 1:1, 2:2, 3:3, 4:4, 5:5, 6:6, 7:5, 8:4, 9:3, 10:2, 11:1}
+#Saff notes
+Staff_Notes = enum(
+    Whole = 4, Half = 2, Quarter = 1, Eighth = .5, Sixteenth = 0.25
+)
+#Steps in a 4/4 0 is the start of the staff, 1 is second beat, and so on...
+Steps = [0,1,2,3]
+#Seed
+Seed = enum(
+    First_Beat = [Staff_Notes.Whole, Staff_Notes.Half, Staff_Notes.Quarter, Staff_Notes.Eighth, Staff_Notes.Sixteenth],
+    Second_Beat = [Staff_Notes.Half, Staff_Notes.Quarter, Staff_Notes.Eighth, Staff_Notes.Sixteenth],
+    Third_Beat = [Staff_Notes.Quarter, Staff_Notes.Eighth, Staff_Notes.Sixteenth],
+    Fourth_Beat = [Staff_Notes.Quarter, Staff_Notes.Eighth, Staff_Notes.Sixteenth]
+)
 #Progression types
 Progressions = enum(Three_Chord = 'Three_Chord_Progression', Blues = 'Blues_Progression', Trap = 'Trap_Progression')
 Three_Chord_Progression_Array = [
