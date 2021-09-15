@@ -7,6 +7,8 @@ from controller import Chords
 from controller import Scales
 from controller import CircleOfFifths
 from controller import Progresssions
+from controller import StepMaker
+from controller import GenerateMidi
 import Debug
 
 if __name__ == '__main__':
@@ -52,3 +54,13 @@ if __name__ == '__main__':
         for note in notes:
             print(note.name)
         print("\n")
+
+
+
+    StepMaker.proc_progression(progression)
+    chords = progression.get
+    for chord in chords:
+        notes = chord.get
+        for note in notes:
+            print(note.step)
+    GenerateMidi.proc_progression(progression)

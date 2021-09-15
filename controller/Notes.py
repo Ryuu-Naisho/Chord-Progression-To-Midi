@@ -12,10 +12,10 @@ class Note:
 
 
 
-    def __init__(self, semitone =0, octave_range = 0, step = 1, duration = 1):
+    def __init__(self, semitone =0, octave_range = 0, step = 0, duration = 1):
         self._pitch = semitone
         self._octave_range = 0 
-        self._step = 0 
+        self._step = step 
         self._duration = 0 
         self._volume = 0
         self._isSharp = False
@@ -83,7 +83,7 @@ class Note:
 
     @step.setter
     def step(self, step):
-        self._step = self
+        self._step = step
 
 
     @duration.setter
