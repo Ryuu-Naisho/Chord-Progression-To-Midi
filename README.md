@@ -1,5 +1,5 @@
 # Chord Progression
-This program takes in a key and genre. Then produces midi file contianing a melody and chord progression following the rules of the key and genre. This solves and issue in music production which is creating a new melody and progression.
+This program takes in a key and genre. Then produces midi file containing a melody and chord progression following the rules of the key and genre. This solves and issue in music production which is creating a new melody and progression.
 
 ## Usage
 You run this program in the terminal, type Python3 chordProgressions.py
